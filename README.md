@@ -56,6 +56,12 @@ plugins: [],
   `````
 ``````
 
+5. Add the following details in the plugin property of tailwind config
+
+```
+            plugins: [require("daisyui"), require("@tailwindcss/line-clamp")],
+```
+
 5.  npm install @reduxjs/toolkit react-redux react-router-dom react-icons react-chartjs-2 chart.js daisyui axios react-hot-toast @tailwindcss/line-clamp
 
 ```
