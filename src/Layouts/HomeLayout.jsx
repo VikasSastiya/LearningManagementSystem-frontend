@@ -96,7 +96,7 @@ function HomeLayout({ children }) {
                     <Link to="/user/profile">Profile</Link>
                   </button>
                   <button className="bg-indigo-400 text-white btn-secondary px-4 py-1 font-semibold rounded-md w-full">
-                    <Link onClick={handleLogout}>Logout</Link>
+                    {/* <Link onClick={handleLogout}>Logout</Link> */}
                   </button>
                 </div>
               </li>
