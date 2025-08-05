@@ -6,6 +6,7 @@ import HomeLayout from "../Layouts/HomeLayout";
 import { BsPersonCircle } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { createAccount } from "../Redux/Slices/AuthSlice";
+import { isEmail, isValidPassword } from "../Helpers/regexMatcher";
 
 function Signup() {
   const dispatch = useDispatch();
@@ -67,21 +68,13 @@ function Signup() {
     }
 
     // checking valid email
-    if (
-      !signupData.email.match(
-        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-      )
-    ) {
+    if (!isEmail(signupData.email)) {
       toast.error("Invalid email format");
       return;
     }
 
     // checking password validation
-    if (
-      !signupData.password.match(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
-      )
-    ) {
+    if (!isValidPassword(signupData.password)) {
       toast.error(
         "Password should be 6-116 character long with at least a number and a special character"
       );
